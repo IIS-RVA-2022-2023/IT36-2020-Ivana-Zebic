@@ -24,7 +24,7 @@ public class Bolnica implements Serializable {
 	
 	private String naziv;
 	private String adresa;
-	private double numeric;
+	private double budzet;
 	
 	@OneToMany(mappedBy = "bolnica")
 	private List<Odeljenje> odeljenje;
@@ -53,10 +53,10 @@ public class Bolnica implements Serializable {
 		this.adresa = adresa;
 	}
 	public double getNumeric() {
-		return numeric;
+		return budzet;
 	}
 	public void setNumeric(double numeric) {
-		this.numeric = numeric;
+		this.budzet = budzet;
 	}
 	
 	public List<Odeljenje> getOdeljenje() {

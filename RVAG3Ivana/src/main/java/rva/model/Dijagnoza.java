@@ -16,7 +16,7 @@ public class Dijagnoza implements Serializable {
 	private static final long serialVersionUID = 1L;
 	
 	@Id
-	@SequenceGenerator(name = "DIJAGNOZA_ID_GENERATOR", sequenceName = "DIJAGNOAZ_SEQ", allocationSize = 1)
+	@SequenceGenerator(name = "DIJAGNOZA_ID_GENERATOR", sequenceName = "DIJAGNOZA_SEQ", allocationSize = 1)
 	@GeneratedValue(strategy = GenerationType.SEQUENCE, generator = "DIJAGNOZA_ID_GENERATOR")
 	private long id;
 	
