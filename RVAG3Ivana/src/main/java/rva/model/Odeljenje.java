@@ -3,6 +3,8 @@ package rva.model;
 import java.io.Serializable;
 import java.util.List;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
+
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
@@ -25,10 +27,11 @@ public class Odeljenje implements Serializable {
 	private String naziv;
 	private String lokacija;
 	
-	@ManyToOne
+	//@ManyToOne
 	@JoinColumn(name = "bolnica")
 	private Bolnica bolnica;
 	
+	@JsonIgnore
 	@OneToMany(mappedBy = "odeljenje")
 	private List<Pacijent> pacijent;
 	

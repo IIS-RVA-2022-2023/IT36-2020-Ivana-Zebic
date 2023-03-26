@@ -23,7 +23,7 @@ public class Pacijent implements Serializable{
 	
 	private String ime;
 	private String prezime;
-	private boolean zdr_odiguranje;
+	private boolean zdr_osiguranje;
 	private Date datum_rodjenja;
 	
 	@ManyToOne
@@ -76,11 +76,11 @@ public class Pacijent implements Serializable{
 	public void setPrezime(String prezime) {
 		this.prezime = prezime;
 	}
-	public boolean isZdr_odiguranje() {
-		return zdr_odiguranje;
+	public boolean isZdr_osiguranje() {
+		return zdr_osiguranje;
 	}
-	public void setZdr_odiguranje(boolean zdr_odiguranje) {
-		this.zdr_odiguranje = zdr_odiguranje;
+	public void setZdr_osiguranje(boolean zdr_osiguranje) {
+		this.zdr_osiguranje = zdr_osiguranje;
 	}
 	public Date getDatum_rodjenja() {
 		return datum_rodjenja;
