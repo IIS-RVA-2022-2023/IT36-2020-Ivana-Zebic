@@ -57,10 +57,10 @@ public class Bolnica implements Serializable {
 	public void setAdresa(String adresa) {
 		this.adresa = adresa;
 	}
-	public double getNumeric() {
+	public double getBudzet() {
 		return budzet;
 	}
-	public void setNumeric(double numeric) {
+	public void setBudzet(double budzet) {
 		this.budzet = budzet;
 	}
 	

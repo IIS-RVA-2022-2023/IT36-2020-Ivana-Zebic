@@ -6,6 +6,7 @@ import java.util.Optional;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import rva.model.Bolnica;
 import rva.model.Odeljenje;
 import rva.repository.OdeljenjeRepository;
 
@@ -13,7 +14,7 @@ import rva.repository.OdeljenjeRepository;
 public class OdeljenjeService {
 	
 	@Autowired
-	private OdeljenjeRepository repo;
+	private OdeljenjeRepository repo; //dependency injection 
 	
 	public List<Odeljenje> getAll(){
 		return repo.findAll();
@@ -23,9 +24,18 @@ public class OdeljenjeService {
 		return repo.findById(id);
 	}
 	
-	public Optional<List<Odeljenje>> getByNaziv(String naziv){
+	public Optional<List<Odeljenje>> findByNaziv(String naziv){
 		Optional<List<Odeljenje>> odeljenje= Optional.of(repo.findByNazivContainingIgnoreCase(naziv));
 		return odeljenje;
+	}
+
+	public Optional<List<Odeljenje>> findOdeljenjeByBolnica(Bolnica bolnica){
+		Optional<List<Odeljenje>> odeljenjeBol= Optional.of(repo.findByBolnica(bolnica));
+		return odeljenjeBol;
+	}
+	
+	public Optional<List<Odeljenje>> findOdeljenjeByLokacija(String lokacija){
+		return Optional.of(repo.findOdeljenjaByLokacijaContaining(lokacija));
 	}
 	
 	public Odeljenje addOdeljenje(Odeljenje odeljenje) {
@@ -36,7 +46,7 @@ public class OdeljenjeService {
 		return getById(id).isPresent();
 	}
 	
-	public void deleteById(long id) {
+	public void deleteOdeljenje(long id) {
 		repo.deleteById(id);
 	}
 }

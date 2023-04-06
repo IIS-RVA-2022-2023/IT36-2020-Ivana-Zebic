@@ -19,12 +19,12 @@ public class BolnicaService {
 		return repo.findAll();
 	}
 	
-	public Optional<Bolnica> getById(long id){
+	public Optional<Bolnica> getBolnicaById(long id){
 		
 		return repo.findById(id);
 	}
 	
-	public Optional<List<Bolnica>> getByNaziv(String naziv){
+	public Optional<List<Bolnica>> getByNazivBolnica(String naziv){
 		Optional<List<Bolnica>> bolnica= Optional.of(repo.findByNazivContainingIgnoreCase(naziv));
 		return bolnica;
 	}
@@ -36,10 +36,10 @@ public class BolnicaService {
 	
 	public boolean existsById(long id) {
 		
-		return getById(id).isPresent();
+		return getBolnicaById(id).isPresent();
 	}
 	
-	public void deleteById(long id) {
+	public void deleteByIdBolnica(long id) {
 		
 		repo.deleteById(id);
 	}

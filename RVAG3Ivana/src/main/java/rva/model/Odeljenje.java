@@ -1,9 +1,14 @@
 package rva.model;
 
 import java.io.Serializable;
+
 import java.util.List;
 
+import org.hibernate.annotations.OnDelete;
+import org.hibernate.annotations.OnDeleteAction;
+
 import com.fasterxml.jackson.annotation.JsonIgnore;
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
@@ -14,6 +19,7 @@ import jakarta.persistence.ManyToOne;
 import jakarta.persistence.OneToMany;
 import jakarta.persistence.SequenceGenerator;
 
+@JsonIgnoreProperties({"hibernateLazyInitializer", "handler"})
 @Entity
 public class Odeljenje implements Serializable {
 	
@@ -27,8 +33,10 @@ public class Odeljenje implements Serializable {
 	private String naziv;
 	private String lokacija;
 	
-	//@ManyToOne
+	@JsonIgnore
+	@ManyToOne
 	@JoinColumn(name = "bolnica")
+	@OnDelete(action = OnDeleteAction.CASCADE)
 	private Bolnica bolnica;
 	
 	@JsonIgnore

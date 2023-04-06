@@ -15,16 +15,16 @@ public class DijagnozaService {
 	@Autowired
 	private DijagnozaRepository repo;
 	
-	public List<Dijagnoza> getAll(){
+	public List<Dijagnoza> getAllDijagnoza(){
 		return repo.findAll();
 	}
 	
-	public Optional<Dijagnoza> getById(long id){
+	public Optional<Dijagnoza> getByIdDijagnoza(long id){
 		
 		return repo.findById(id);
 	}
 	
-	public Optional<List<Dijagnoza>> getByNaziv(String naziv){
+	public Optional<List<Dijagnoza>> getByNazivDijagnoza(String naziv){
 		Optional<List<Dijagnoza>> dijagnoza= Optional.of(repo.findByNazivContainingIgnoreCase(naziv));
 		return dijagnoza;
 	}
@@ -34,12 +34,12 @@ public class DijagnozaService {
 		return repo.save(dijagnoza);
 	}
 	
-	public boolean existsById(long id) {
+	public boolean existsByIdDijagnoza(long id) {
 		
-		return getById(id).isPresent();
+		return getByIdDijagnoza(id).isPresent();
 	}
 	
-	public void deleteById(long id) {
+	public void deleteDijagnozaById(long id) {
 		
 		repo.deleteById(id);
 	}
