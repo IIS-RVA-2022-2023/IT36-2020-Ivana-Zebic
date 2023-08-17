@@ -4,12 +4,13 @@ import java.io.Serializable;
 
 import java.util.List;
 
-import org.hibernate.annotations.OnDelete;
-import org.hibernate.annotations.OnDeleteAction;
+//import org.hibernate.annotations.OnDelete;
+//import org.hibernate.annotations.OnDeleteAction;
 
 import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 
+import jakarta.persistence.CascadeType;
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
@@ -33,14 +34,12 @@ public class Odeljenje implements Serializable {
 	private String naziv;
 	private String lokacija;
 	
-	@JsonIgnore
 	@ManyToOne
 	@JoinColumn(name = "bolnica")
-	@OnDelete(action = OnDeleteAction.CASCADE)
 	private Bolnica bolnica;
 	
 	@JsonIgnore
-	@OneToMany(mappedBy = "odeljenje")
+	@OneToMany (mappedBy = "odeljenje" , cascade = CascadeType.REMOVE)
 	private List<Pacijent> pacijent;
 	
 	

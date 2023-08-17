@@ -1,5 +1,7 @@
-import { Component, OnDestroy, OnInit } from "@angular/core";
+import { Component, OnDestroy, OnInit, ViewChild  } from "@angular/core";
 import { MatDialog } from "@angular/material/dialog";
+import { MatPaginator } from '@angular/material/paginator';
+import { MatSort } from '@angular/material/sort';
 import { MatTableDataSource } from "@angular/material/table";
 import { Subscription } from "rxjs";
 import { Bolnica } from "src/app/models/bolnica";
@@ -17,6 +19,9 @@ export class BolnicaComponent implements OnInit,OnDestroy{
     displayedColumns = ['id','naziv','adresa','budzet', 'actions'];
     subscription!:Subscription;
 
+    @ViewChild(MatSort, {static:false}) sort!:MatSort;
+    @ViewChild(MatPaginator, {static:false}) paginator!:MatPaginator;
+
     constructor(private bolnicaService: BolnicaService,
                 public dialog: MatDialog) {}
 
@@ -28,7 +33,9 @@ export class BolnicaComponent implements OnInit,OnDestroy{
     }
     public loadData() {
         this.subscription = this.bolnicaService.getAllBolnica().subscribe(
-            data => {this.dataSource = new MatTableDataSource(data);}
+            data => {this.dataSource = new MatTableDataSource(data);
+                this.dataSource.sort = this.sort;
+                this.dataSource.paginator = this.paginator;}
         ),
         (error:Error) => {console.log(error.name + ' ' + error.message);}
     }

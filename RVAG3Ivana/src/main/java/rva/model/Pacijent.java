@@ -3,11 +3,13 @@ package rva.model;
 import java.io.Serializable;
 import java.util.Date;
 
-import org.hibernate.annotations.OnDelete;
-import org.hibernate.annotations.OnDeleteAction;
 
-import com.fasterxml.jackson.annotation.JsonIgnore;
-import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
+//import org.hibernate.annotations.OnDelete;
+//import org.hibernate.annotations.OnDeleteAction;
+
+//import com.fasterxml.jackson.annotation.JsonIgnore;
+//import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
+
 
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
@@ -19,7 +21,7 @@ import jakarta.persistence.ManyToOne;
 import jakarta.persistence.SequenceGenerator;
 
 
-@JsonIgnoreProperties({ "hibernateLazyInitializer", "handler" })
+//@JsonIgnoreProperties({ "hibernateLazyInitializer", "handler" })
 @Entity
 public class Pacijent implements Serializable {
 
@@ -37,16 +39,16 @@ public class Pacijent implements Serializable {
 	@Column(name = "datum_rodjenja")
 	private Date datumRodjenja;
 
-	@JsonIgnore
+	
 	@ManyToOne
 	@JoinColumn(name = "odeljenje")
-	@OnDelete(action = OnDeleteAction.CASCADE)
+	//@OnDelete(action = OnDeleteAction.CASCADE)
 	private Odeljenje odeljenje;
 
-	@JsonIgnore
+	
 	@ManyToOne
 	@JoinColumn(name = "dijagnoza")
-	@OnDelete(action = OnDeleteAction.CASCADE)
+	//@OnDelete(action = OnDeleteAction.CASCADE)
 	private Dijagnoza dijagnoza;
 
 	public Pacijent() {

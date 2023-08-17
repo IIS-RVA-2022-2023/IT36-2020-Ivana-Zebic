@@ -1,40 +1,41 @@
 import { Component, Inject } from "@angular/core";
 import { MAT_DIALOG_DATA, MatDialogRef } from "@angular/material/dialog";
 import { MatSnackBar } from "@angular/material/snack-bar";
-import { Bolnica } from "src/app/models/bolnica";
-import { Odeljenje } from "src/app/models/odeljenje";
-import { BolnicaService } from "src/app/services/bolnica.service";
-import { OdeljenjeService } from "src/app/services/odeljenje.service";
+import { Dijagnoza } from "src/app/models/dijagnoza";
+//import { Odeljenje } from "src/app/models/odeljenje";
+import { Pacijent } from "src/app/models/pacijent";
+import { DijagnozaService } from "src/app/services/dijagnoza.service";
+//import { OdeljenjeService } from "src/app/services/odeljenje.service";
+import { PacijentService } from "src/app/services/pacijent.service";
 
 @Component({
-    selector: 'app-odeljenje-dialog',
-    templateUrl: './odeljenje-dialog.component.html',
-    styleUrls: ['./odeljenje-dialog.component.css'],
+    selector: 'app-pacijent-dialog',
+    templateUrl:'./pacijent-dialog.component.html',
+    styleUrls: ['./pacijent-dialog.component.css'],
 })
 
-export class OdeljenjeDialogComponent {
+export class PacijentDialogComponent {
     flag!: number;
-    bolnice!: Bolnica[];
+    dijagnoze!: Dijagnoza[];
 
     constructor(
         public snackBar: MatSnackBar,
-        public dialogRef: MatDialogRef<Odeljenje>,
-        @Inject(MAT_DIALOG_DATA) public data: Odeljenje,
-        public odeljenjeService : OdeljenjeService,
-        public bolnicaService: BolnicaService
+        public dialogRef: MatDialogRef<Pacijent>,
+        @Inject(MAT_DIALOG_DATA) public data: Pacijent,
+        public pacijentService : PacijentService,
+        public dijagnozaService:DijagnozaService
     ){}
-
     ngOnInit(): void {
-      this.bolnicaService.getAllBolnica().subscribe(
+      this.dijagnozaService.getAllDijagnoza().subscribe(
         data => {
-          this.bolnice = data;
+          this.dijagnoze = data;
         }
       )
     }
     public add(): void {
-        this.odeljenjeService.addOdeljenje(this.data).subscribe(() => {
+        this.pacijentService.addPacijent(this.data).subscribe(() => {
           this.snackBar.open(
-            'Odeljenje sa nazivom: ' + this.data.naziv + ' je uspesno dodato!',
+            'Pacijent : ' + this.data.ime +' '+ this.data.prezime +' je uspesno dodat/a!',
             'Ok',
             { duration: 4500 }
           );
@@ -45,9 +46,9 @@ export class OdeljenjeDialogComponent {
           };
       }
       public update(): void {
-        this.odeljenjeService.updateOdeljenje(this.data).subscribe(() => {
+        this.pacijentService.updatePacijent(this.data).subscribe(() => {
           this.snackBar.open(
-            'Odeljenje sa ID: ' + this.data.id + ' je uspesno izmenjeno!',
+            'Pacijent sa ID: ' + this.data.id + ' je uspesno izmenjen!',
             'Ok',
             { duration: 4500 }
           );
@@ -58,8 +59,8 @@ export class OdeljenjeDialogComponent {
           };
       }
       public delete(): void {
-        this.odeljenjeService.deleteOdeljenje(this.data.id).subscribe(() => {
-          this.snackBar.open('Odeljenje je izbrisano!', 'Ok', { duration: 4500 });
+        this.pacijentService.deletePacijent(this.data.id).subscribe(() => {
+          this.snackBar.open('Pacijent je izbrisan!', 'Ok', { duration: 4500 });
         }),
           (error: Error) => {
             console.log(error.name + ' ' + error.message);

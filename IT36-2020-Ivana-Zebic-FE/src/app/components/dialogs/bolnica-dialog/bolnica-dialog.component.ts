@@ -34,7 +34,7 @@ import { BolnicaService } from "src/app/services/bolnica.service";
     public update():void {
         this.bolnicaService.updateBolnica(this.data).subscribe(
             () => {
-                this.snackBar.open('Bolnica sa ID: ' + this.data.id + 'je uspesno izmenjen!', 'Ok', {duration:4000});
+                this.snackBar.open('Bolnica sa ID: ' + this.data.id + ' je uspesno izmenjen!', 'Ok', {duration:4000});
             }
         ),
         (error:Error) => {

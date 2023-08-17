@@ -21,16 +21,17 @@ import {MatDatepickerModule} from '@angular/material/datepicker';
 import { MatNativeDateModule } from '@angular/material/core';
 import {MatSelectModule} from '@angular/material/select';
 import {MatCheckboxModule} from '@angular/material/checkbox';
-
-
-
-
 import { AppComponent } from './app.component';
 import { BolnicaComponent } from './components/main/bolnica/bolnica.component';
 import { DijagnozaComponent } from './components/main/dijagnoza/dijagnoza.component';
 import { BolnicaDialogComponent } from './components/dialogs/bolnica-dialog/bolnica-dialog.component';
 import { DijagnozaDialogComponent } from './components/dialogs/dijagnoza-dialog/dijagnoza-dialog.component';
-
+import { OdeljenjeComponent } from './components/main/odeljenje/odeljenje.component';
+import { OdeljenjeDialogComponent } from './components/dialogs/odeljenje-dialog/odeljenje-dialog.component';
+import { PacijentComponent } from './components/main/pacijent/pacijent.component';
+import { PacijentDialogComponent } from './components/dialogs/pacijent-dialog/pacijent-dialog.component';
+import { MatSortModule } from '@angular/material/sort';
+import {MatPaginatorModule} from '@angular/material/paginator';
 
 @NgModule({
   declarations: [
@@ -39,8 +40,10 @@ import { DijagnozaDialogComponent } from './components/dialogs/dijagnoza-dialog/
     DijagnozaComponent,
     BolnicaDialogComponent,
     DijagnozaDialogComponent,
-    
-
+    OdeljenjeComponent,
+    OdeljenjeDialogComponent,
+    PacijentComponent,
+    PacijentDialogComponent
     // dodati ostale komponente 
   ],
   imports: [
@@ -64,7 +67,9 @@ import { DijagnozaDialogComponent } from './components/dialogs/dijagnoza-dialog/
     MatDatepickerModule,
     MatNativeDateModule,
     MatSelectModule,
-    MatCheckboxModule
+    MatCheckboxModule,
+    MatSortModule,
+    MatPaginatorModule
 
   ],
   providers: [],

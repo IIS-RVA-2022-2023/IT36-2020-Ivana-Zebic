@@ -35,3 +35,30 @@ values (nextval('DIJAGNOZA_SEQ'), 'Bolesti koze i potkoznog tkiva', 'Uritkarija 
 
 insert into dijagnoza(id,naziv,opis,oznaka)
 values (nextval('DIJAGNOZA_SEQ'), 'Bolesti koze i potkoznog tkiva', 'Dermatitis i ekcemi','L20 L30');
+
+
+
+insert into odeljenje(id,lokacija, naziv, bolnica)
+values (nextval('ODELJENJE_SEQ'),'Centralna bolnica','gerijatrija', 2);
+insert into odeljenje(id,lokacija, naziv, bolnica)
+values (nextval('ODELJENJE_SEQ'),'Dom zdravlja','pedijatrija', 1);
+insert into odeljenje(id,lokacija, naziv, bolnica)
+values (nextval('ODELJENJE_SEQ'),'Centralna bolnica','pedijatrija', 2);
+insert into odeljenje(id,lokacija, naziv, bolnica)
+values (nextval('ODELJENJE_SEQ'),'Centralna bolnica','neurologija', 3);
+insert into odeljenje(id,lokacija, naziv, bolnica)
+values (nextval('ODELJENJE_SEQ'),'Centralna bolnica','ortopedija', 2);
+
+
+insert into pacijent(id,datum_rodjenja,ime,prezime, zdr_osiguranje,dijagnoza,odeljenje)
+values (nextval('PACIJENT_SEQ'),'10-10-1988','Isidora','Japundza',true,4,1);
+insert into pacijent(id,datum_rodjenja,ime,prezime, zdr_osiguranje,dijagnoza,odeljenje)
+values (nextval('PACIJENT_SEQ'),'10-10-1976','Ivana','Zebic',true,3,2);
+insert into pacijent(id,datum_rodjenja,ime,prezime, zdr_osiguranje,dijagnoza,odeljenje)
+values (nextval('PACIJENT_SEQ'),'10-10-2011','Stefana','Kokic',true,2,3);
+insert into pacijent(id,datum_rodjenja,ime,prezime, zdr_osiguranje,dijagnoza,odeljenje)
+values (nextval('PACIJENT_SEQ'),'10-10-2009','Marko','Jovic',true,1,3);
+insert into pacijent(id,datum_rodjenja,ime,prezime, zdr_osiguranje,dijagnoza,odeljenje)
+values (nextval('PACIJENT_SEQ'),'10-10-1999','Marko','Stevic',true,4,2);
+insert into pacijent(id,datum_rodjenja,ime,prezime, zdr_osiguranje,dijagnoza,odeljenje)
+values (nextval('PACIJENT_SEQ'),'10-10-1996','Janko','Jovic',true,4,2);
