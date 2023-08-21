@@ -32,6 +32,10 @@ import { PacijentComponent } from './components/main/pacijent/pacijent.component
 import { PacijentDialogComponent } from './components/dialogs/pacijent-dialog/pacijent-dialog.component';
 import { MatSortModule } from '@angular/material/sort';
 import {MatPaginatorModule} from '@angular/material/paginator';
+import { HomeComponent } from './components/utility/home/home.component';
+import { HomeDialogComponent } from './components/dialogs/home-dialog/home-dialog.component';
+import { AuthorComponent } from './components/utility/author/author.component';
+import { AboutComponent } from './components/utility/about/about.component';
 
 @NgModule({
   declarations: [
@@ -43,7 +47,11 @@ import {MatPaginatorModule} from '@angular/material/paginator';
     OdeljenjeComponent,
     OdeljenjeDialogComponent,
     PacijentComponent,
-    PacijentDialogComponent
+    PacijentDialogComponent,
+    HomeComponent,
+    HomeDialogComponent,
+    AuthorComponent,
+    AboutComponent
     // dodati ostale komponente 
   ],
   imports: [

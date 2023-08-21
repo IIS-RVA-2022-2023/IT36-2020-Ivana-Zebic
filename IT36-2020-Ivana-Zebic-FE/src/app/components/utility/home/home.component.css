@@ -1,0 +1,22 @@
+.container {
+    display: flex;
+    flex-direction: column;
+    font-family: Roboto, sans-serif;
+  }
+.background-image {
+  background-image: url('hospital.jpg'); 
+  background-size: cover;
+  background-position: center;
+  height: 100vh; 
+  display: flex;
+  
+  justify-content: center;
+  text-align: center;
+}
+.text{
+    color:  #303030;
+    align-items: top;
+    padding-top: 87px;
+    margin-bottom: 10px;
+    
+}

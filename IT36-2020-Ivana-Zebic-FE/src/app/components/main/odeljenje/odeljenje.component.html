@@ -53,9 +53,8 @@
         *matRowDef="let row; columns: displayedColumns" (click)="selectRow(row)">
       </mat-row>
     </mat-table>
-    <div class="container mat-elavation-z8">
-      <app-pacijent *ngIf="parentSelectedOdeljenje" [childSelectedOdeljenje]="parentSelectedOdeljenje"  ></app-pacijent>
-    </div>
   </div>
-  
+  <div class="container mat-elavation-z8">
+    <app-pacijent *ngIf="parentSelectedOdeljenje" [childSelectedOdeljenje]="parentSelectedOdeljenje"  ></app-pacijent>
+  </div>
   

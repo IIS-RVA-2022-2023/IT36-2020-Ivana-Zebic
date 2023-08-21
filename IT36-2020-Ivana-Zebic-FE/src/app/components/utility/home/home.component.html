@@ -1,0 +1,8 @@
+<div class=" mat-elavation-z8 background-image">
+    <div class="container">
+      <h1 class="text">BOLNICA</h1>
+      <button mat-raised-button  class="mat-elevation-z8" (click)="showDialog()">Klikni za obavestenje</button>
+    </div>
+  </div>
+  <app-home-dialog *ngIf="showMessageFlag" [message]="dialogMessage" (dialogClosed)="closeDialog()"></app-home-dialog>
+  

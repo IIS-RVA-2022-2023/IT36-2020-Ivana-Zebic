@@ -1,0 +1,42 @@
+.author-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+  }
+  
+  .author-profile {
+    text-align: center;
+    border: 2px solid rgba(0, 0, 0, 0.1);
+    padding: 20px;
+    border-radius: 10px;
+    background-color: rgba(0, 0, 0, 0.03);
+  }
+  
+  .profile-picture {
+    width: 150px;
+    height: 150px;
+    border-radius: 50%;
+    background-size: cover;
+    margin-bottom: 10px;
+  }
+  
+  .cv {
+    margin-bottom: 20px;
+    font-family: Roboto, sans-serif;
+    font-size: 20px;
+  }
+  
+  .social-icons {
+    font-size: 25px;
+    width: auto;
+    height: auto;
+    color: white;
+    margin-top: 5px;
+  }
+  
+  .social-icons a {
+    margin: 0 10px;
+    text-decoration: none;
+  }
+  
