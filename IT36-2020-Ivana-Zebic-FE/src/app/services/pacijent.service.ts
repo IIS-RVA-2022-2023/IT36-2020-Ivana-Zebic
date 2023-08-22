@@ -10,11 +10,10 @@ import { Pacijent } from "../models/pacijent";
 
 export class PacijentService{
     constructor(private httpClient: HttpClient) {}
-    // dodati get pacijent by odeljenje id 
+    
     public getPacijentByOdeljenje(idOdeljenje: number): Observable<any>{
         return this.httpClient.get(`${PACIJENT_ODELJENJE_URL}/${idOdeljenje}`);
     }
-    //dodati za get pacijent by dijagnoza
     public getAllPacijent(): Observable<any> {
         return this.httpClient.get(`${PACIJENT_URL}`);
     }

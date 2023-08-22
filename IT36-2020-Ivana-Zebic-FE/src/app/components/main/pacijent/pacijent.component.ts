@@ -56,8 +56,10 @@ export class PacijentComponent implements OnChanges{
         const dialogRef = this.dialog.open(PacijentDialogComponent, {data: {id,ime,prezime,zdr_osiguranje,datum_rodjenja,dijagnoza} 
         });
         dialogRef.componentInstance.flag = flag;
-        dialogRef.componentInstance.data.odeljenje = this.childSelectedOdeljenje;
-        dialogRef.afterClosed().subscribe((result) => {
+        if (flag == 1) {
+            dialogRef.componentInstance.data.odeljenje = this.childSelectedOdeljenje;
+        }
+        dialogRef.afterClosed().subscribe( result => {
             if(result == 1){
                 this.loadData();
             }

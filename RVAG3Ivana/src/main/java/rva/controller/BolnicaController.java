@@ -75,12 +75,12 @@ public class BolnicaController {
 		return ResponseEntity.status(HttpStatus.OK).body(azuriranaBolnica);
 	}
 	
-	@DeleteMapping("bolnica/{id}")
-	public ResponseEntity<?> deleteBolnica(@PathVariable("id") long id){
+	@DeleteMapping("/bolnica/{id}")
+	public ResponseEntity<String> deleteBolnica(@PathVariable long id){
 		if(!service.existsById(id)) {
 			return ResponseEntity.status(HttpStatus.NOT_FOUND).body("Could not find bolnica with requested id");
 		}
 		service.deleteByIdBolnica(id);
-		return ResponseEntity.status(HttpStatus.OK).body("Bolnica with requested id deleted successfully");
+		return ResponseEntity.ok("Bolnica with requested id deleted successfully");
 	}
 }

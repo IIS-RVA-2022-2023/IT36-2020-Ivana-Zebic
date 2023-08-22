@@ -50,4 +50,10 @@ export class BolnicaComponent implements OnInit,OnDestroy{
             }
         )
     }
+    public applyFilter(filter:any){
+        filter = filter.target.value;
+        filter = filter.trim();
+        filter = filter.toLocaleLowerCase();
+        this.dataSource.filter = filter;
+      }
 }

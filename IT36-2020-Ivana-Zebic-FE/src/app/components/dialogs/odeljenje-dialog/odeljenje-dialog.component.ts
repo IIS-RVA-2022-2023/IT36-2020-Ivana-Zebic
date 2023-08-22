@@ -34,37 +34,31 @@ export class OdeljenjeDialogComponent {
     public add(): void {
         this.odeljenjeService.addOdeljenje(this.data).subscribe(() => {
           this.snackBar.open(
-            'Odeljenje sa nazivom: ' + this.data.naziv + ' je uspesno dodato!',
-            'Ok',
-            { duration: 4500 }
-          );
+            'Odeljenje sa nazivom: ' + this.data.naziv + ' je uspesno dodato!','Ok',{ duration: 4500 });
         }),
-          (error: Error) => {
-            console.log(error.name + ' ' + error.message);
-            this.snackBar.open('Dogodila se greska', 'Ok', { duration: 2500 });
-          };
+        (error: Error) => {
+          console.log(error.name + ' ' + error.message);
+          this.snackBar.open('Dogodila se greska', 'Ok', { duration: 2500 });
+          }
       }
       public update(): void {
         this.odeljenjeService.updateOdeljenje(this.data).subscribe(() => {
           this.snackBar.open(
-            'Odeljenje sa ID: ' + this.data.id + ' je uspesno izmenjeno!',
-            'Ok',
-            { duration: 4500 }
-          );
+            'Odeljenje sa ID: ' + this.data.id + ' je uspesno izmenjeno!','Ok', { duration: 4500 });
         }),
-          (error: Error) => {
-            console.log(error.name + ' ' + error.message);
-            this.snackBar.open('Dogodila se greska', 'Ok', { duration: 2500 });
-          };
+        (error: Error) => {
+          console.log(error.name + ' ' + error.message);
+          this.snackBar.open('Dogodila se greska', 'Ok', { duration: 2500 });
+          }
       }
       public delete(): void {
         this.odeljenjeService.deleteOdeljenje(this.data.id).subscribe(() => {
           this.snackBar.open('Odeljenje je izbrisano!', 'Ok', { duration: 4500 });
         }),
-          (error: Error) => {
-            console.log(error.name + ' ' + error.message);
-            this.snackBar.open('Dogodila se greska', 'Ok', { duration: 2500 });
-          };
+        (error: Error) => {
+          console.log(error.name + ' ' + error.message);
+          this.snackBar.open('Dogodila se greska', 'Ok', { duration: 2500 });
+          }
       }
       public cancel(): void {
         this.dialogRef.close();

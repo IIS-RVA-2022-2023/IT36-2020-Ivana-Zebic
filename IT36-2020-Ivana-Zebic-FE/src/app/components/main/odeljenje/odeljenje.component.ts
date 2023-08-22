@@ -49,7 +49,7 @@ export class OdeljenjeComponent {
         const dialogRef = this.dialog.open(OdeljenjeDialogComponent, {data: {id,naziv,lokacija,bolnica} 
         });
         dialogRef.componentInstance.flag = flag;
-        dialogRef.afterClosed().subscribe((result) => {
+        dialogRef.afterClosed().subscribe( result => {
             if(result == 1){
                 this.loadData();
             }

@@ -117,10 +117,10 @@ public class OdeljenjeController {
 	}
 	
 	@DeleteMapping("odeljenje/{id}")
-	public ResponseEntity<?> deleteOdeljenje(@PathVariable("id") long id){
+	public ResponseEntity<?> deleteOdeljenje(@PathVariable long id){
 		if(service.existsById(id)) {
 			service.deleteOdeljenje(id);
-			return ResponseEntity.status(HttpStatus.OK).body("Odeljenje with requested id deleted successfully");
+			return ResponseEntity.ok("Odeljenje with requested id deleted successfully");
 		}
 		return ResponseEntity.status(HttpStatus.NOT_FOUND).body("Odeljenje with requested id does not exist");
 	}

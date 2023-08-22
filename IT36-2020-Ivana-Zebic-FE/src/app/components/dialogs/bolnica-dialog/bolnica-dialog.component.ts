@@ -22,7 +22,7 @@ import { BolnicaService } from "src/app/services/bolnica.service";
     public add():void {
         this.bolnicaService.addBolnica(this.data).subscribe(
             () => { 
-                this.snackBar.open('Bolnica sa nazivom ' + this.data.naziv + ' je uspesno dodata!')
+                this.snackBar.open('Bolnica sa nazivom ' + this.data.naziv + ' je uspesno dodata!','Ok', {duration: 4500})
             }
         ),
         (error:Error) => {

@@ -2,10 +2,8 @@ import { Component, Inject } from "@angular/core";
 import { MAT_DIALOG_DATA, MatDialogRef } from "@angular/material/dialog";
 import { MatSnackBar } from "@angular/material/snack-bar";
 import { Dijagnoza } from "src/app/models/dijagnoza";
-//import { Odeljenje } from "src/app/models/odeljenje";
 import { Pacijent } from "src/app/models/pacijent";
 import { DijagnozaService } from "src/app/services/dijagnoza.service";
-//import { OdeljenjeService } from "src/app/services/odeljenje.service";
 import { PacijentService } from "src/app/services/pacijent.service";
 
 @Component({

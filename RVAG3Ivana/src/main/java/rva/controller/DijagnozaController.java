@@ -75,11 +75,11 @@ public class DijagnozaController {
 	}
 	
 	@DeleteMapping("dijagnoza/{id}")
-	public ResponseEntity<?> deleteDijagnoza(@PathVariable("id") long id){
+	public ResponseEntity<?> deleteDijagnoza(@PathVariable long id){
 		if(!service.existsByIdDijagnoza(id)) {
 			return ResponseEntity.status(HttpStatus.NOT_FOUND).body("Dijagnoza with requested id does not exist");
 		} 
 		service.deleteDijagnozaById(id);
-		return ResponseEntity.status(HttpStatus.OK).body("Dijagnoza with requested id deleted successfully");
+		return ResponseEntity.ok("Dijagnoza with requested id deleted successfully");
 	}
 }

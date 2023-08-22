@@ -3,7 +3,10 @@
 </mat-toolbar>
 
   <div class="container mat-elavation-z8">
-    <mat-table #table [dataSource]="dataSource" class="mat-cell">
+    <mat-form-field>
+      <input matInput placeholder="Pretraga Bolnica" name="filter" (keyup)="applyFilter($event)" />
+    </mat-form-field>
+    <mat-table #table [dataSource]="dataSource" class="mat-cell" matSort>
       <!--ID-->
       <ng-container matColumnDef="id">
         <mat-header-cell *matHeaderCellDef>ID</mat-header-cell>

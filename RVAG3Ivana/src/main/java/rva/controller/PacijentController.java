@@ -114,10 +114,10 @@ public class PacijentController {
 	}
 	
 	@DeleteMapping("/pacijent/{id}")
-	public ResponseEntity<?> deletePacijent(@PathVariable("id") long id) {
+	public ResponseEntity<?> deletePacijent(@PathVariable long id) {
 		if(service.existsById(id)) {
 			service.deleteById(id);
-			return ResponseEntity.status(HttpStatus.OK).body("Pacijent with requested id deleted successfully");
+			return ResponseEntity.ok("Pacijent with requested id deleted successfully");
 			
 		} 
 		return ResponseEntity.status(HttpStatus.NOT_FOUND).body("Pacijent with requested id does not exist");
